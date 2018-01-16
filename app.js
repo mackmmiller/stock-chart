@@ -1,9 +1,11 @@
 //#region Requirements
 const express = require("express");
 const bodyParser = require("body-parser");
-const socket = require("socket.io");
 const mongoose = require("mongoose");
 const path = require("path");
+const app = express();
+const server = require("http").Server(app);
+const io = require("socket.io")(server);
 const Symbol = require("./models/Symbol");
 const configDB = require("./config/mongo.js");
 const fetchData = require("./config/stockData.js");
@@ -23,10 +25,7 @@ mongoose.connection.once(
 //#endregion
 
 // App setup
-const app = express();
-var server = app.listen(3000 || process.env.PORT, function() {
-  console.log("Server is now running");
-});
+server.listen(process.env.PORT || 3000);
 
 // Static files
 app.use(express.static("public"));
@@ -45,7 +44,6 @@ app.get("/api/stocks", (req, res) => {
 //#endregion
 
 // Socket setup
-var io = socket(server);
 io.on("connection", function(socket) {
   console.log(`${socket.id} has connected`);
 
