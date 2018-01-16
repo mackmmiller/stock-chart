@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Stockspotter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+  <link rel="stylesheet" type="text/css" media="screen" href="/index.css" />
+</head>
+
+<body>
+  <main>
+    <h1 class="title">Stocks</h1>
+    <div class="add">
+      <input type="text" placeholder="Symbol">
+      <button>+</button>
+    </div>
+    <div style="height: 400px; min-width: 310px;" class="stock-chart"></div>
+    <div class="stocks">
+    </div>
+  </main>
+  <script src="https://code.highcharts.com/stock/highstock.js"></script>
+  <script src="/index.js"></script>
+</body>
+
+</html>
