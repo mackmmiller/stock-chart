@@ -7,8 +7,8 @@
     "npm": "4.2.0"
   },
   "scripts": {
-    "devstart": "nodemon app.js",
-    "start": "node app.js"
+    "start": "node app.js",
+    "devstart": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
