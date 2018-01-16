@@ -1,14 +1,12 @@
 {
   "name": "stocks",
   "version": "1.0.0",
-  "description": "",
+  "private": true,
   "engines": {
     "node": "7.10.1",
     "npm": "4.2.0"
   },
-  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "devstart": "nodemon app.js",
     "start": "node app.js"
   },
